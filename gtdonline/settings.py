@@ -78,9 +78,13 @@ WSGI_APPLICATION = 'gtdonline.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gtdonline_db',
+        'USER': 'postgres',
+        'PASSWORD': 'obst@1354',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+        }
 }
 
 
@@ -123,5 +127,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'gtdonline/static')
+    os.path.join(BASE_DIR, 'gtdonline/static'),
 ]
+
+# LOGIN_URL = 'login/'
