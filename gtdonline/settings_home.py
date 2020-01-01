@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pages.apps.PagesConfig',
-    'accounts.apps.AccountsConfig'
+    'pages.apps.PagesConfig'
 ]
 
 MIDDLEWARE = [
@@ -84,7 +83,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'obst@1354',
         'HOST': '127.0.0.1',
-        'PORT': '4000',
+        'PORT': '5432',
     }
 }
 
@@ -129,8 +128,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'gtdonline/static'),
-    os.path.join(BASE_DIR, 'gtdonline/plugins'),
-
 ]
 
 # LOGIN_URL = 'login/'
