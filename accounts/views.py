@@ -11,11 +11,17 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             if 'next' in request.POST:
-                # print(request.POST.next)
                 return redirect(request.POST.get('next'))
+            else:
+                return redirect('/')
         else:
-            # Do Nothing
-            print('not authenticated')
+            # SHOULD RETURN ERROR MESSAGE[S] TO LOGIN FORM
             return redirect('login')
     else:
         return render(request, 'accounts/login.html')
+
+def logout(request):
+    if request.user is not None:
+        auth.logout(request)
+        return redirect('login')
+    
